@@ -13,6 +13,8 @@ Once all server are up and running. This docker configure replicas and died.
 
 How to run in swarm. Example for 5 nodes named "mongodbsrv-X"
 
+```
 docker service create --name configurator --network "mongodb-net" --restart-max-attempts 30 \
     -e REPLICAS_NUMBER=5 -e REPLICASET_NAME=repset -e NODE_PREFIX=mongodbsrv \
     atsistemas/docker-mongo-replication-configurator:1.0
+```
